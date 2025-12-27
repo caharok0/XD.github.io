@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Мій особистий профіль для Telegram">
+    <title>Мій Telegram Профіль</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Аватар та основна інформація -->
+        <header class="profile-header">
+            <div class="avatar-container">
+                <img src="https://via.placeholder.com/150" alt="Аватар" class="avatar" id="avatar">
+                <div class="online-status"></div>
+            </div>
+            <h1 class="name" id="name">Ваше Ім'я</h1>
+            <p class="bio" id="bio">Тут ваш короткий опис або біографія</p>
+            <div class="badges">
+                <span class="badge"><i class="fas fa-check-circle"></i> Перевірено</span>
+                <span class="badge"><i class="fas fa-star"></i> Преміум</span>
+            </div>
+        </header>
+
+        <!-- Статистика -->
+        <section class="stats">
+            <div class="stat-item">
+                <span class="stat-number" id="followers">1.2K</span>
+                <span class="stat-label">Підписників</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="posts">356</span>
+                <span class="stat-label">Постів</span>
+            </div>
+            <div class="stat-item">
+                <span class="stat-number" id="rating">4.8</span>
+                <span class="stat-label">Рейтинг</span>
+            </div>
+        </section>
+
+        <!-- Посилання -->
+        <section class="links-section">
+            <h2><i class="fas fa-link"></i> Мої посилання</h2>
+            <div class="links-container" id="links-container">
+                <!-- Посилання будуть додаватись через JavaScript -->
+            </div>
+        </section>
+
+        <!-- Контакти -->
+        <section class="contacts">
+            <h2><i class="fas fa-address-book"></i> Контакти</h2>
+            <div class="contact-links">
+                <a href="https://t.me/yourusername" class="contact-btn telegram">
+                    <i class="fab fa-telegram"></i> Написати в Telegram
+                </a>
+                <a href="mailto:youremail@example.com" class="contact-btn email">
+                    <i class="fas fa-envelope"></i> Email
+                </a>
+            </div>
+        </section>
+
+        <!-- Редагування (тільки для власника) -->
+        <div class="admin-panel">
+            <button id="editBtn" class="edit-btn">
+                <i class="fas fa-edit"></i> Редагувати профіль
+            </button>
+        </div>
+    </div>
+
+    <!-- Модальне вікно для редагування -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <h2><i class="fas fa-cog"></i> Редагування профілю</h2>
+            
+            <div class="form-group">
+                <label for="editName"><i class="fas fa-user"></i> Ім'я:</label>
+                <input type="text" id="editName" placeholder="Введіть ваше ім'я">
+            </div>
+            
+            <div class="form-group">
+                <label for="editBio"><i class="fas fa-pen"></i> Біографія:</label>
+                <textarea id="editBio" placeholder="Розкажіть про себе" rows="3"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label><i class="fas fa-link"></i> Посилання:</label>
+                <div id="linksEditor">
+                    <!-- Динамічно додані поля для посилань -->
+                </div>
+                <button type="button" id="addLinkBtn" class="add-btn">
+                    <i class="fas fa-plus"></i> Додати посилання
+                </button>
+            </div>
+            
+            <div class="modal-buttons">
+                <button id="saveBtn" class="save-btn">Зберегти зміни</button>
+                <button id="cancelBtn" class="cancel-btn">Скасувати</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
